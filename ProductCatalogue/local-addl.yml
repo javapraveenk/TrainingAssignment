@@ -1,0 +1,9 @@
+http:
+  port: 6083
+  adminPort: 6084
+  
+logging:
+  level: ERROR
+  console:
+    enabled: true
+    threshold: INFO
