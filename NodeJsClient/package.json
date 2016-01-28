@@ -1,0 +1,15 @@
+{
+  "name": "clientmain",
+  "version": "1.0.0",
+  "description": "main method to call client service",
+  "main": "main.js",
+  "dependencies": {
+    "express": "^4.13.4"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Vikas Agrawal",
+  "license": "ISC"
+}
