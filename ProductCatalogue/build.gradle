@@ -15,10 +15,8 @@ allprojects {
 
 dependencies {
     compile "io.dropwizard:dropwizard-core:0.7.0"
-    compile "com.couchbase.client:couchbase-client:1.4.9"
-    compile "org.springframework:spring-beans:4.2.4.RELEASE"
-    compile "org.springframework:spring-context:3.0.2.RELEASE"    
-    compile "com.couchbase.client:java-client:2.0.0"
+    compile "com.couchbase.client:couchbase-client:1.4.9"      
+    compile "com.couchbase.client:java-client:2.2.3"
     compile "org.apache.commons:commons-lang3:3.3.1"
     
     testCompile "junit:junit:4.11"
@@ -28,6 +26,12 @@ dependencies {
 
 mainClassName = 'com.training.exercise.App'
 
-run {
+run {    
     args 'server','local.yml'
+}
+
+task(runDebug, dependsOn: 'classes', type: JavaExec) {
+    main = "com.training.exercise.App"
+    classpath = sourceSets.main.runtimeClasspath
+    jvmArgs = ["-Xdebug", "-Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=5005"]
 }
